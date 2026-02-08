@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Award-Winning Medical Device - Ben Moore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ef-purple: #6D3FFF;
+            --bg: #ffffff;
+            --bg-light: #fafafa;
+            --text: #0a0a0a;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1.25rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--ef-purple);
+        }
+
+        .section-nav {
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            margin-top: 4rem;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .section-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+        }
+
+        .section-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+
+        .section-nav a:hover {
+            color: var(--ef-purple);
+        }
+
+        .hero {
+            padding: 7rem 2.5rem 4rem;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ef-purple);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .lead {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            max-width: 750px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-metrics {
+            display: flex;
+            gap: 3.5rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--ef-purple);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2.5rem;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .content-section h3 {
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1.25rem;
+            font-weight: 600;
+        }
+
+        .content-section p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .content-section li {
+            padding-left: 1.75rem;
+            position: relative;
+            margin-bottom: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .content-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--ef-purple);
+            font-weight: 700;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 2.5rem 0;
+        }
+
+        .callout {
+            background: rgba(109, 63, 255, 0.05);
+            border-left: 4px solid var(--ef-purple);
+            padding: 1.75rem;
+            margin: 2.5rem 0;
+            border-radius: 4px;
+        }
+
+        .callout h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            margin-top: 0;
+        }
+
+        .callout p {
+            margin-bottom: 0.75rem;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .lead {
+                font-size: 1.05rem;
+            }
+
+            .hero-metrics {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .section-nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="back-link">← Back to Projects</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="project-tag">Programme Leadership · 2024-2025</div>
+            <h1>Award-Winning Medical Device</h1>
+            <p class="lead">Leading a 30-person £multi-million multidisciplinary team to develop a novel medical device to save lives. From ideas to concepts to alpha prototype, validated with world-class surgeons.</p>
+            
+            <div class="hero-metrics">
+                <div class="metric">
+                    <div class="metric-value">30</div>
+                    <div class="metric-label">Team Members</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">9.1/10</div>
+                    <div class="metric-label">Client Rating</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">2</div>
+                    <div class="metric-label">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-nav">
+        <div class="section-nav-container">
+            <a href="#overview">Overview</a>
+            <a href="#contributions">My Contributions</a>
+            <a href="#impact">Recognition & Impact</a>
+        </div>
+    </div>
+
+    <div class="image-placeholder">
+        images/medical-device-prototype.jpg
+    </div>
+
+    <section class="content-section" id="overview">
+        <h2>Groundbreaking Medical Technology</h2>
+        <p>A groundbreaking medical device addressing a clinical problem that affects hundreds of thousands of people annually. World-class surgeons described it as "groundbreaking technology" and "going to change the lives of their patients and save the lives of many if they had it in their practice."</p>
+        
+        <div class="callout">
+            <h3>Clinical Impact</h3>
+            <p>This device tackles a critical medical challenge that impacts healthcare delivery and patient outcomes on a massive scale. The validation from leading surgeons confirms both the technical innovation and the real-world clinical value of this solution.</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="contributions">
+        <h2>My Contributions</h2>
+        
+        <h3>Programme Leadership</h3>
+        <ul>
+            <li>Scoped, priced, and sold the £multi-million programme to the client</li>
+            <li>Structured and led a 30-person multidisciplinary team across mechanical engineering, electrical engineering, human factors, physics, systems engineering, and industrial design</li>
+            <li>Successfully handed over to successor after securing follow-on phases</li>
+        </ul>
+
+        <h3>Clinical Validation</h3>
+        <ul>
+            <li>Led multinational human-factors studies with world-class surgeons to validate clinical demand</li>
+            <li>Conducted cadaver testing to ensure device meets real-world surgical needs</li>
+            <li>Secured stakeholder sign-off and ensured product-market fit</li>
+        </ul>
+
+        <div class="image-placeholder">
+            images/medical-device-team.jpg
+        </div>
+
+        <h3>Technical Delivery & Pivot Management</h3>
+        <ul>
+            <li>Spotted critical challenges early and pitched new direction</li>
+            <li>Navigated difficult client conversations and restructured team scope</li>
+            <li>Successfully pivoted while maintaining momentum and delivery timelines</li>
+            <li>Delivered dozens of high-quality prototypes on time and on-spec</li>
+        </ul>
+    </section>
+
+    <section class="content-section" id="impact">
+        <h2>Recognition & Impact</h2>
+        <p>This programme won internal awards for "Team Collaboration of the Year" and "Coolest Prototype" in 2025, recognizing both the technical excellence and the collaborative culture we built.</p>
+        <p>Achieved a 9.1/10 client relationship rating, reflecting not just the quality of our deliverables, but the trust and partnership established throughout the programme.</p>
+
+        <div class="callout">
+            <h3>Awards & Recognition</h3>
+            <p><strong>Team Collaboration of the Year (2025)</strong> - Recognized for building and leading a high-performing multidisciplinary team</p>
+            <p><strong>Coolest Prototype (2025)</strong> - Award for exceptional prototype delivery and innovation</p>
+        </div>
+    </section>
+
+    <div class="image-placeholder">
+        images/medical-device-awards.jpg
+    </div>
+
+</body>
+</html>

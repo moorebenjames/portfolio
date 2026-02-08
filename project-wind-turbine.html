@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portable Wind Turbine - Ben Moore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ef-purple: #6D3FFF;
+            --bg: #ffffff;
+            --bg-light: #fafafa;
+            --text: #0a0a0a;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 1.25rem 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
+        .back-link:hover { color: var(--ef-purple); }
+        .section-nav { background: var(--bg-light); border-bottom: 1px solid var(--border); padding: 1rem 0; margin-top: 4rem; position: sticky; top: 70px; z-index: 100; }
+        .section-nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; display: flex; gap: 2rem; overflow-x: auto; }
+        .section-nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 500; white-space: nowrap; transition: color 0.3s; }
+        .section-nav a:hover { color: var(--ef-purple); }
+        .hero { padding: 7rem 2.5rem 4rem; background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%); }
+        .hero-container { max-width: 1200px; margin: 0 auto; }
+        .project-tag { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ef-purple); margin-bottom: 1rem; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero .lead { font-size: 1.15rem; color: var(--text-light); max-width: 750px; line-height: 1.7; margin-bottom: 2.5rem; }
+        .hero-metrics { display: flex; gap: 3.5rem; padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .metric-value { font-size: 2.2rem; font-weight: 700; color: var(--ef-purple); margin-bottom: 0.25rem; }
+        .metric-label { font-size: 0.85rem; color: var(--text-light); }
+        .content-section { max-width: 1200px; margin: 0 auto; padding: 4rem 2.5rem; }
+        .content-section h2 { font-size: 2.2rem; margin-bottom: 1.5rem; font-weight: 700; }
+        .content-section h3 { font-size: 1.6rem; margin: 2.5rem 0 1.25rem; font-weight: 600; }
+        .content-section p { font-size: 0.95rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; }
+        .content-section ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .content-section li { padding-left: 1.75rem; position: relative; margin-bottom: 0.9rem; font-size: 0.95rem; line-height: 1.7; color: var(--text-light); }
+        .content-section li::before { content: '→'; position: absolute; left: 0; color: var(--ef-purple); font-weight: 700; }
+        .image-placeholder { width: 100%; height: 400px; background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-light); font-size: 0.9rem; margin: 2.5rem 0; }
+        .callout { background: rgba(109, 63, 255, 0.05); border-left: 4px solid var(--ef-purple); padding: 1.75rem; margin: 2.5rem 0; border-radius: 4px; }
+        .callout h3 { font-size: 1.4rem; margin-bottom: 0.75rem; margin-top: 0; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-metrics { flex-direction: column; gap: 1.5rem; }
+            .content-section { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="back-link">← Back to Projects</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="project-tag">Product Innovation</div>
+            <h1>Portable Wind Turbine</h1>
+            <p class="lead">Designed and manufactured award-winning portable wind turbine for remote expeditions, camping, and developing world applications. Won Da Vinci Innovation Award (£3,000) and Spark Innovation Award (£2,000).</p>
+            
+            <div class="hero-metrics">
+                <div class="metric">
+                    <div class="metric-value">500W</div>
+                    <div class="metric-label">Power Output</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">&lt;5kg</div>
+                    <div class="metric-label">Weight</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">£5k</div>
+                    <div class="metric-label">Grants Won</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-nav">
+        <div class="section-nav-container">
+            <a href="#overview">Overview</a>
+            <a href="#development">Development</a>
+            <a href="#outcome">Outcome & Learnings</a>
+        </div>
+    </div>
+
+    <div class="image-placeholder">
+        images/wind-turbine-prototype.jpg
+    </div>
+
+    <section class="content-section" id="overview">
+        <h2>My First Venture</h2>
+        <p>This project represents my first attempt at venture building and the catalyst that got me into entrepreneurship. While not pursued as a full-scale venture, it was an extremely valuable experience that taught me hands-on engineering development, commercial thinking, and the importance of market evaluation.</p>
+
+        <div class="callout">
+            <h3>Product Vision</h3>
+            <p>Portable power generation for remote expeditions, camping, and developing world applications. Compact, ergonomic design that can be carried and erected by one person—generating up to 500W in 13 m/s wind speeds.</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="development">
+        <h2>What I Did</h2>
+
+        <h3>Design & Engineering</h3>
+        <ul>
+            <li>Designed complete turbine system in SolidWorks with detailed technical drawings and BOM</li>
+            <li>Optimized blade aerodynamics using Blade Element Momentum Theory (BEMT) and CFD in ANSYS CFX</li>
+            <li>Achieved high coefficient of performance through aerodynamic optimization</li>
+        </ul>
+
+        <div class="image-placeholder">
+            images/wind-turbine-cfd.jpg
+        </div>
+
+        <h3>Prototype Manufacturing</h3>
+        <ul>
+            <li>Manufactured proof of concept prototype using composite manufacturing techniques</li>
+            <li>Utilized 3D printing, MIG welding, and traditional machining</li>
+            <li>Operated lathes, milling machines, drill presses, and grinders</li>
+            <li>Tested prototype to validate performance and generate confidence for grant applications</li>
+        </ul>
+
+        <h3>Commercial Development</h3>
+        <ul>
+            <li>Conducted user-centric research and competitor analysis</li>
+            <li>Developed complete business plan and go-to-market strategy</li>
+            <li>Evaluated market potential and opportunity</li>
+            <li>Successfully applied for and won £5,000 in innovation grants</li>
+        </ul>
+
+        <div class="image-placeholder">
+            images/wind-turbine-manufacturing.jpg
+        </div>
+    </section>
+
+    <section class="content-section" id="outcome">
+        <h2>Outcome & Learnings</h2>
+        <p>After winning grants and developing a comprehensive business plan, I evaluated the market potential and decided not to pursue this as a full venture. It wasn't the type of high-impact, venture-scalable opportunity worth pursuing long-term.</p>
+
+        <div class="callout">
+            <h3>The Real Value</h3>
+            <p>This was an extremely valuable learning experience — my first attempt at venture building that sparked my journey into entrepreneurship. It taught me hands-on engineering development, commercial thinking, market evaluation, and the importance of choosing the right problems to solve.</p>
+        </div>
+
+        <h3>Awards & Recognition</h3>
+        <ul>
+            <li><strong>Da Vinci Innovation Award (£3,000)</strong> - First undergraduate to win Cardiff University Engineering's innovation award</li>
+            <li><strong>Spark Innovation Award (£2,000)</strong> - Recognized for product innovation and business plan quality</li>
+        </ul>
+
+        <h3>Product Specifications Achieved</h3>
+        <ul>
+            <li>Lightweight: Under 5kg total weight</li>
+            <li>Output: 500W in 13 m/s wind speeds</li>
+            <li>Modular design for easy assembly</li>
+            <li>Can be carried and erected by one person</li>
+            <li>High coefficient of performance through optimized blade design</li>
+        </ul>
+    </section>
+
+    <div class="image-placeholder">
+        images/wind-turbine-awards.jpg
+    </div>
+
+</body>
+</html>

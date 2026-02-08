@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surgical Robotic System - Ben Moore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ef-purple: #6D3FFF;
+            --bg: #ffffff;
+            --bg-light: #fafafa;
+            --text: #0a0a0a;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 1.25rem 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
+        .back-link:hover { color: var(--ef-purple); }
+        .section-nav { background: var(--bg-light); border-bottom: 1px solid var(--border); padding: 1rem 0; margin-top: 4rem; position: sticky; top: 70px; z-index: 100; }
+        .section-nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; display: flex; gap: 2rem; overflow-x: auto; }
+        .section-nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 500; white-space: nowrap; transition: color 0.3s; }
+        .section-nav a:hover { color: var(--ef-purple); }
+        .hero { padding: 7rem 2.5rem 4rem; background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%); }
+        .hero-container { max-width: 1200px; margin: 0 auto; }
+        .project-tag { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ef-purple); margin-bottom: 1rem; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero .lead { font-size: 1.15rem; color: var(--text-light); max-width: 750px; line-height: 1.7; margin-bottom: 2.5rem; }
+        .hero-metrics { display: flex; gap: 3.5rem; padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .metric-value { font-size: 2.2rem; font-weight: 700; color: var(--ef-purple); margin-bottom: 0.25rem; }
+        .metric-label { font-size: 0.85rem; color: var(--text-light); }
+        .content-section { max-width: 1200px; margin: 0 auto; padding: 4rem 2.5rem; }
+        .content-section h2 { font-size: 2.2rem; margin-bottom: 1.5rem; font-weight: 700; }
+        .content-section h3 { font-size: 1.6rem; margin: 2.5rem 0 1.25rem; font-weight: 600; }
+        .content-section p { font-size: 0.95rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; }
+        .content-section ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .content-section li { padding-left: 1.75rem; position: relative; margin-bottom: 0.9rem; font-size: 0.95rem; line-height: 1.7; color: var(--text-light); }
+        .content-section li::before { content: '→'; position: absolute; left: 0; color: var(--ef-purple); font-weight: 700; }
+        .image-placeholder { width: 100%; height: 400px; background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-light); font-size: 0.9rem; margin: 2.5rem 0; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 2.5rem 0; border-radius: 8px; border: 1px solid var(--border); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .callout { background: rgba(109, 63, 255, 0.05); border-left: 4px solid var(--ef-purple); padding: 1.75rem; margin: 2.5rem 0; border-radius: 4px; }
+        .callout h3 { font-size: 1.4rem; margin-bottom: 0.75rem; margin-top: 0; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-metrics { flex-direction: column; gap: 1.5rem; }
+            .content-section { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="back-link">← Back to Projects</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="project-tag">Advanced Surgical Robotics · Engineering Prototype</div>
+            <h1>Surgical Robotic System</h1>
+            <p class="lead">3 years of mechanical engineering expertise across cutting-edge surgical robotic systems. Worked across all major subsystems—from structural components and user experience elements to instrument drive mechanisms—for a variety of surgical procedure use cases.</p>
+            
+            <div class="hero-metrics">
+                <div class="metric">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Years Experience</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">Sub-mm</div>
+                    <div class="metric-label">Precision</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-nav">
+        <div class="section-nav-container">
+            <a href="#overview">Overview</a>
+            <a href="#experience">My Experience</a>
+            <a href="#capabilities">System Capabilities</a>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/796353088" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <section class="content-section" id="overview">
+        <h2>Engineering Prototype Development</h2>
+        <p>Contributed to cutting-edge surgical robotic systems built in months, not years. Design engineer experience across all major subsystems for multiple markets and clients, delivering solutions for single-port access surgical procedures.</p>
+
+        <div class="callout">
+            <h3>da Vinci SP Competitor</h3>
+            <p>This system is a competitor to the da Vinci SP surgical robot, offering single port access for single incision or natural orifice surgery across many different surgery types.</p>
+        </div>
+    </section>
+
+    <div class="image-placeholder">
+        images/robot-system-overview.jpg
+    </div>
+
+    <section class="content-section" id="experience">
+        <h2>My Experience</h2>
+
+        <h3>Structural & Mechanical Design</h3>
+        <ul>
+            <li>Design engineer for structural components ensuring robotic stability and precision during procedures</li>
+            <li>Built central drive unit responsible for powering and controlling surgical instruments</li>
+            <li>Designed telescopically extending setup arms with failsafe mechanisms</li>
+            <li>Optimized degrees of freedom and motion types for weight and function</li>
+        </ul>
+
+        <h3>User Experience & Interface</h3>
+        <ul>
+            <li>Developed UX elements including intuitive status lighting systems for surgeon feedback</li>
+            <li>Tech landscaping and competitor analysis for design elements</li>
+            <li>Worked on endoluminal robotic systems from scratch based on requirements</li>
+        </ul>
+
+        <div class="image-placeholder">
+            images/robot-drive-unit.jpg
+        </div>
+
+        <h3>System Conceptualization</h3>
+        <ul>
+            <li>Conceptual, novel surgical instrument designs - hosting brainstorms with clients</li>
+            <li>Contributed to full system conceptualization from core functionality</li>
+            <li>Worked across all major subsystems for multiple surgical procedure use cases</li>
+        </ul>
+    </section>
+
+    <section class="content-section" id="capabilities">
+        <h2>System Capabilities</h2>
+
+        <div class="callout">
+            <h3>Key Advantages</h3>
+            <ul>
+                <li><strong>Single incision access</strong> - Minimally invasive approach</li>
+                <li><strong>3 instruments + video capability</strong> - Full surgical suite</li>
+                <li><strong>Lighter and smaller</strong> - Fits variety of operating room spaces</li>
+                <li><strong>Improved functionality</strong> - Better surgical efficacy</li>
+                <li><strong>Sub-millimeter precision</strong> - Exceptional accuracy</li>
+            </ul>
+        </div>
+
+        <p>The system supports single port access for single incision or natural orifice surgery, enabling a wide range of surgical procedures with improved patient outcomes and reduced invasiveness.</p>
+
+        <h3>Technical Breadth</h3>
+        <p>Gained comprehensive design experience across patient-side robotics, surgeon consoles, instrument articulation, sterile barriers, and human-machine interfaces. Delivered solutions balancing surgical performance, regulatory compliance, and manufacturability.</p>
+    </section>
+
+    <div class="image-placeholder">
+        images/robot-workspace.jpg
+    </div>
+
+</body>
+</html>

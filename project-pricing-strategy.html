@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company-Wide Pricing Strategy - Ben Moore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ef-purple: #6D3FFF;
+            --bg: #ffffff;
+            --bg-light: #fafafa;
+            --text: #0a0a0a;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 1.25rem 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
+        .back-link:hover { color: var(--ef-purple); }
+        .section-nav { background: var(--bg-light); border-bottom: 1px solid var(--border); padding: 1rem 0; margin-top: 4rem; position: sticky; top: 70px; z-index: 100; }
+        .section-nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; display: flex; gap: 2rem; overflow-x: auto; }
+        .section-nav a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; font-weight: 500; white-space: nowrap; transition: color 0.3s; }
+        .section-nav a:hover { color: var(--ef-purple); }
+        .hero { padding: 7rem 2.5rem 4rem; background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%); }
+        .hero-container { max-width: 1200px; margin: 0 auto; }
+        .project-tag { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ef-purple); margin-bottom: 1rem; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero .lead { font-size: 1.15rem; color: var(--text-light); max-width: 750px; line-height: 1.7; margin-bottom: 2.5rem; }
+        .hero-metrics { display: flex; gap: 3.5rem; padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .metric-value { font-size: 2.2rem; font-weight: 700; color: var(--ef-purple); margin-bottom: 0.25rem; }
+        .metric-label { font-size: 0.85rem; color: var(--text-light); }
+        .content-section { max-width: 1200px; margin: 0 auto; padding: 4rem 2.5rem; }
+        .content-section h2 { font-size: 2.2rem; margin-bottom: 1.5rem; font-weight: 700; }
+        .content-section h3 { font-size: 1.6rem; margin: 2.5rem 0 1.25rem; font-weight: 600; }
+        .content-section p { font-size: 0.95rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; }
+        .content-section ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .content-section li { padding-left: 1.75rem; position: relative; margin-bottom: 0.9rem; font-size: 0.95rem; line-height: 1.7; color: var(--text-light); }
+        .content-section li::before { content: '→'; position: absolute; left: 0; color: var(--ef-purple); font-weight: 700; }
+        .image-placeholder { width: 100%; height: 400px; background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-light); font-size: 0.9rem; margin: 2.5rem 0; }
+        .callout { background: rgba(109, 63, 255, 0.05); border-left: 4px solid var(--ef-purple); padding: 1.75rem; margin: 2.5rem 0; border-radius: 4px; }
+        .callout h3 { font-size: 1.4rem; margin-bottom: 0.75rem; margin-top: 0; }
+        
+        /* REDACTED styling - black text on black background */
+        .redacted {
+            background: #000;
+            color: #000;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            display: inline-block;
+            user-select: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-metrics { flex-direction: column; gap: 1.5rem; }
+            .content-section { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="back-link">← Back to Projects</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="project-tag">Strategic Initiative · Present</div>
+            <h1>Company-Wide Pricing Strategy</h1>
+            <p class="lead">Chosen to lead the company's pricing strategy — one of the most commercially sensitive initiatives in the business. Building live data models to identify profit drivers and inform strategic decisions.</p>
+            
+            <div class="hero-metrics">
+                <div class="metric">
+                    <div class="metric-value">250+</div>
+                    <div class="metric-label">Employees Impacted</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">Full</div>
+                    <div class="metric-label">Business Model Breakdown</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-nav">
+        <div class="section-nav-container">
+            <a href="#overview">Overview</a>
+            <a href="#contributions">My Work</a>
+            <a href="#impact">Impact</a>
+        </div>
+    </div>
+
+    <div class="image-placeholder">
+        images/pricing-dashboard-main.jpg
+    </div>
+
+    <section class="content-section" id="overview">
+        <h2>Strategic Mandate</h2>
+        <p>Selected to lead the company's pricing strategy—one of the most commercially sensitive and strategically important initiatives in the business. Tasked with winning more profitable work, maximizing mutual value with clients, and diversifying risk across the portfolio.</p>
+
+        <div class="callout">
+            <h3>Commercially Sensitive Work</h3>
+            <p>Due to the confidential nature of this strategic initiative, specific details about <span class="redacted">methodologies, insights, and business outcomes</span> are redacted. However, the scope and impact of this work demonstrates trusted leadership on critical commercial initiatives.</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="contributions">
+        <h2>My Work</h2>
+
+        <h3>Data Infrastructure</h3>
+        <ul>
+            <li>Built sophisticated data model in Power BI with live integration across sales, operations, finance, and project management systems</li>
+            <li>Created full business model breakdown showing <span class="redacted">profit drivers and performance metrics</span></li>
+            <li>Developed <span class="redacted">analytical frameworks for portfolio analysis</span></li>
+        </ul>
+
+        <div class="image-placeholder">
+            images/pricing-data-model.jpg
+        </div>
+
+        <h3>Commercial Analysis</h3>
+        <ul>
+            <li>Analyzed portfolio performance to identify what contributes to success</li>
+            <li>Spotted patterns in <span class="redacted">profitability distribution across market segments</span></li>
+            <li>Delivered actionable insights directly to C-suite stakeholders</li>
+            <li>Enabled leadership to make data-informed strategic decisions</li>
+        </ul>
+
+        <h3>Scenario Planning</h3>
+        <ul>
+            <li>Developed dynamic scenario analysis tools</li>
+            <li>Modeled <span class="redacted">sensitivity of key business metrics</span> to changes in strategy</li>
+            <li>Built intuitive UI for senior leaders to explore data independently</li>
+        </ul>
+
+        <div class="image-placeholder">
+            images/pricing-scenario-tool.jpg
+        </div>
+
+        <h3>Strategic Roadmap</h3>
+        <ul>
+            <li>Integrated competitor analysis and market trend analysis</li>
+            <li>Developed <span class="redacted">long-term pricing evolution strategy</span></li>
+            <li>Created frameworks for <span class="redacted">alternative pricing models and risk assessment</span></li>
+        </ul>
+    </section>
+
+    <section class="content-section" id="impact">
+        <h2>Impact</h2>
+        <p>This work directly impacts how the company wins more profitable business and manages risk across 250+ employees. The data infrastructure and analytical frameworks built serve as foundational tools for strategic decision-making at the highest levels of the organization.</p>
+
+        <div class="callout">
+            <h3>Foundation for Future Work</h3>
+            <p>Built on my experience developing core business intelligence tools—sales dashboards, P&L performance tracking, and project portfolio reports—used daily across the organization. This pricing strategy work represents the culmination of that expertise applied to the most commercially sensitive challenge in the business.</p>
+        </div>
+    </section>
+
+    <div class="image-placeholder">
+        images/pricing-insights.jpg
+    </div>
+
+</body>
+</html>
