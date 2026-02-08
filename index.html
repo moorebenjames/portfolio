@@ -8,6 +8,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+                /* === CARD IMAGE HANDLING === */
+        .project-image,
+        .small-project-image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        /* Featured projects */
+        .image-medical-device { background-image: url("images/medical-device-hero.jpg"); }
+        .image-volunteer-space { background-image: url("images/volunteer-space-hero.jpg"); }
+        .image-surgical-robot { background-image: url("images/surgical-robot-hero.jpg"); }
+        .image-wind-turbine { background-image: url("images/wind-turbine-hero.jpg"); }
+        
+        /* Small cards */
+        .image-pricing { background-image: url("images/pricing-strategy-card.jpg"); }
+        .image-sorting { background-image: url("images/sorting-machine-card.jpg"); }
+        .image-rocket { background-image: url("images/rocket-card.jpg"); }
+        .image-wind-solar { background-image: url("images/wind-solar-farm-card.jpg"); }
+        .image-harness { background-image: url("images/harness-card.jpg"); }
+
         :root {
             --ef-purple: #6D3FFF;
             --ef-orange: #FF6B4A;
@@ -512,9 +533,7 @@
         <div class="featured-grid">
             <!-- Medical Device FIRST -->
             <a href="project-medical-device.html" class="project-card">
-                <div class="project-image">
-                    images/medical-device-hero.jpg
-                </div>
+                <div class="project-image image-medical-device"></div>
                 <div class="project-content">
                     <div class="project-tag">Programme Leadership</div>
                     <h3 class="project-title">Award-Winning Medical Device</h3>
@@ -538,9 +557,7 @@
 
             <!-- Volunteer Space SECOND -->
             <a href="project-volunteer-space.html" class="project-card">
-                <div class="project-image">
-                    images/volunteer-space-hero.jpg
-                </div>
+                <div class="project-image image-volunteer-space"></div>
                 <div class="project-content">
                     <div class="project-tag">Venture-Backed SaaS Company</div>
                     <h3 class="project-title">Volunteer Space Ltd</h3>
@@ -564,9 +581,7 @@
 
             <!-- Surgical Robot -->
             <a href="project-surgical-robot.html" class="project-card">
-                <div class="project-image">
-                    images/surgical-robot-hero.jpg
-                </div>
+               <div class="project-image image-surgical-robot"></div>
                 <div class="project-content">
                     <div class="project-tag">Advanced Surgical Robotics</div>
                     <h3 class="project-title">Surgical Robotic System</h3>
@@ -586,9 +601,7 @@
 
             <!-- Wind Turbine -->
             <a href="project-wind-turbine.html" class="project-card">
-                <div class="project-image">
-                    <img src="images/wind-turbine-hero.jpg" alt="Wind turbine">
-                </div>
+                <div class="project-image image-wind-turbine"></div>
                 <div class="project-content">
                     <div class="project-tag">Product Innovation</div>
                     <h3 class="project-title">Portable Wind Turbine</h3>
