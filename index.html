@@ -8,27 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-                /* === CARD IMAGE HANDLING === */
-        .project-image,
-        .small-project-image {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        /* Featured projects */
-        .image-medical-device { background-image: url("images/medical-device-hero.jpg"); }
-        .image-volunteer-space { background-image: url("images/volunteer-space-hero.jpg"); }
-        .image-surgical-robot { background-image: url("images/surgical-robot-hero.jpg"); }
-        .image-wind-turbine { background-image: url("images/wind-turbine-hero.jpg"); }
-        
-        /* Small cards */
-        .image-pricing { background-image: url("images/pricing-strategy-card.jpg"); }
-        .image-sorting { background-image: url("images/sorting-machine-card.jpg"); }
-        .image-rocket { background-image: url("images/rocket-card.jpg"); }
-        .image-wind-solar { background-image: url("images/wind-solar-farm-card.jpg"); }
-        .image-harness { background-image: url("images/harness-card.jpg"); }
-
         :root {
             --ef-purple: #6D3FFF;
             --ef-orange: #FF6B4A;
@@ -229,7 +208,8 @@
             border-color: var(--ef-purple);
         }
 
-        .project-image {
+        .project-image { position: relative; overflow: hidden; }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
             width: 100%;
             height: 320px;
             background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
@@ -241,12 +221,6 @@
             text-align: center;
             padding: 2rem;
             position: relative;
-        }
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: inherit;
         }
 
         .project-content {
@@ -320,7 +294,8 @@
             border-color: var(--ef-purple);
         }
 
-        .small-project-image {
+        .small.project-image { position: relative; overflow: hidden; }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
             width: 100%;
             height: 180px;
             background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
@@ -501,7 +476,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">BM</a>
+            <a href="index.html" class="logo">BEN MOORE</a>
             <ul class="nav-links">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#awards">Awards</a></li>
@@ -533,7 +508,9 @@
         <div class="featured-grid">
             <!-- Medical Device FIRST -->
             <a href="project-medical-device.html" class="project-card">
-                <div class="project-image image-medical-device"></div>
+                <div class="project-image">
+                    <img src="assets/images/medical-device-hero.jpg" alt="Medical Device">
+                </div>
                 <div class="project-content">
                     <div class="project-tag">Programme Leadership</div>
                     <h3 class="project-title">Award-Winning Medical Device</h3>
@@ -557,7 +534,9 @@
 
             <!-- Volunteer Space SECOND -->
             <a href="project-volunteer-space.html" class="project-card">
-                <div class="project-image image-volunteer-space"></div>
+                <div class="project-image">
+                    <img src="assets/<img src="assets/images/volunteer-space-hero.jpg" alt="Volunteer Space">" alt="Volunteer Space">
+                </div>
                 <div class="project-content">
                     <div class="project-tag">Venture-Backed SaaS Company</div>
                     <h3 class="project-title">Volunteer Space Ltd</h3>
@@ -581,7 +560,9 @@
 
             <!-- Surgical Robot -->
             <a href="project-surgical-robot.html" class="project-card">
-               <div class="project-image image-surgical-robot"></div>
+                <div class="project-image">
+                    <img src="assets/images/surgical-robot-hero.jpg" alt="Surgical Robot">
+                </div>
                 <div class="project-content">
                     <div class="project-tag">Advanced Surgical Robotics</div>
                     <h3 class="project-title">Surgical Robotic System</h3>
@@ -601,7 +582,9 @@
 
             <!-- Wind Turbine -->
             <a href="project-wind-turbine.html" class="project-card">
-                <div class="project-image image-wind-turbine"></div>
+                <div class="project-image">
+                    <img src="assets/images/wind-turbine-hero.jpg" alt="Wind Turbine">
+                </div>
                 <div class="project-content">
                     <div class="project-tag">Product Innovation</div>
                     <h3 class="project-title">Portable Wind Turbine</h3>
@@ -633,7 +616,7 @@
             <!-- Pricing Strategy -->
             <a href="project-pricing-strategy.html" class="small-project-card">
                 <div class="small-project-image">
-                    images/pricing-strategy-card.jpg
+                    <img src="assets/images/pricing-strategy-card.jpg" alt="Pricing Strategy">
                 </div>
                 <div class="small-project-content">
                     <div class="project-tag">Strategic Initiative</div>
@@ -645,7 +628,7 @@
             <!-- Sorting Machine -->
             <a href="project-sorting-machine.html" class="small-project-card">
                 <div class="small-project-image">
-                    images/sorting-machine-card.jpg
+                    <img src="assets/images/sorting-machine-card.jpg" alt="Sorting Machine">
                 </div>
                 <div class="small-project-content">
                     <div class="project-tag">Industrial Design</div>
@@ -657,7 +640,7 @@
             <!-- Rocket -->
             <a href="project-rocket.html" class="small-project-card">
                 <div class="small-project-image">
-                    images/rocket-card.jpg
+                    <img src="assets/images/rocket-card.jpg" alt="Rocket">
                 </div>
                 <div class="small-project-content">
                     <div class="project-tag">Aerospace Engineering</div>
@@ -669,7 +652,7 @@
             <!-- Wind/Solar Farm -->
             <a href="project-wind-solar-farm.html" class="small-project-card">
                 <div class="small-project-image">
-                    images/wind-solar-farm-card.jpg
+                    <img src="assets/images/wind-solar-farm-card.jpg" alt="Wind Solar Farm">
                 </div>
                 <div class="small-project-content">
                     <div class="project-tag">Renewable Energy</div>
@@ -681,7 +664,7 @@
             <!-- Harness -->
             <a href="project-harness.html" class="small-project-card">
                 <div class="small-project-image">
-                    images/harness-card.jpg
+                    <img src="assets/images/harness-card.jpg" alt="Harness App">
                 </div>
                 <div class="small-project-content">
                     <div class="project-tag">Healthcare Tech</div>

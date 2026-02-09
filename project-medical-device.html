@@ -195,6 +195,19 @@
         }
 
         .image-placeholder {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .original-image-placeholder {
             width: 100%;
             height: 400px;
             background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
@@ -291,9 +304,7 @@
         </div>
     </div>
 
-    <div class="image-placeholder">
-        images/medical-device-prototype.jpg
-    </div>
+    <div class="image-placeholder"><img src="assets/images/medical-device-prototype.jpg" alt="Project Image"></div>
 
     <section class="content-section" id="overview">
         <h2>Groundbreaking Medical Technology</h2>
@@ -322,9 +333,7 @@
             <li>Secured stakeholder sign-off and ensured product-market fit</li>
         </ul>
 
-        <div class="image-placeholder">
-            images/medical-device-team.jpg
-        </div>
+        <div class="image-placeholder"><img src="assets/images/medical-device-team.jpg" alt="Project Image"></div>
 
         <h3>Technical Delivery & Pivot Management</h3>
         <ul>
@@ -347,9 +356,7 @@
         </div>
     </section>
 
-    <div class="image-placeholder">
-        images/medical-device-awards.jpg
-    </div>
+    <div class="image-placeholder"><img src="assets/images/medical-device-awards.jpg" alt="Project Image"></div>
 
 </body>
 </html>
