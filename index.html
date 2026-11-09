@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BM - Deep Tech Engineer</title>
+    <title>Ben Moore - mechanical engineer and co-founder</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        #about, #projects { scroll-margin-top: 100px; }
         .btn-linkedin { background: #0A66C2; color: white; border: 2px solid #0A66C2; display: inline-flex; align-items: center; gap: 0.5rem; }
         .btn-linkedin:hover { background: #004182; border-color: #004182; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(10,102,194,0.3); }
         :root { --ef-purple: #6D3FFF; --bg: #ffffff; --bg-light: #fafafa; --text: #0a0a0a; --text-light: #666666; --border: #e5e5e5; }
@@ -24,7 +25,7 @@
         .hero .accent { color: var(--ef-purple); }
         .hero p { font-size: 1.2rem; color: var(--text-light); max-width: 650px; margin-bottom: 2.5rem; line-height: 1.7; }
         .hero-intent { font-size: 0.9rem; color: var(--text-light); font-style: italic; margin-top: -1.5rem; margin-bottom: 2.5rem; max-width: 600px; }
-        .cta-buttons { display: flex; gap: 1.25rem; }
+        .cta-buttons { display: flex; gap: 1.25rem; flex-wrap: wrap; }
         .btn { padding: 0.9rem 1.75rem; font-size: 0.95rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: all 0.3s ease; display: inline-block; }
         .btn-primary { background: var(--ef-purple); color: white; }
         .btn-primary:hover { background: #5a2ee6; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(109,63,255,0.3); }
@@ -81,10 +82,10 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">BM</a>
+            <a href="index.html" class="logo">Ben Moore</a>
             <ul class="nav-links">
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#awards">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -92,9 +93,9 @@
 
     <section class="hero">
         <div class="hero-container">
-            <h1>Deep Tech Engineer. <span class="accent">Builder.</span></h1>
+            <h1>Mechanical engineer. <span class="accent">Co-founder.</span></h1>
             <p><br>
-            I work where engineering meets early‑stage venture building: developing advanced hardware, leading multidisciplinary programmes, and exploring deep‑tech problem spaces. My experience spans technical delivery, strategy and founding. Alongside my consulting work, I’m on the lookout for important problems, hard science, and the right people to build with.</p>
+            Mechanical engineer at Cambridge Design Partnership (CDP) for 6 years, taking medical devices and surgical robots from proof of principle to clinically evaluated prototype. Before that I co-founded a software company and ran it as MD. Now I want to co-found again - this time a company where the hard part is the physical product.</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="mailto:moore.ben.james@gmail.com" class="btn btn-secondary">Get in Touch</a>
@@ -105,16 +106,15 @@
             </div>
         </div>
     </section>
-    <section class="projects" id="projects">
-        <div class="section-label">Selected Work</div>
-        <p class="section-desc"> 
-        For the past six years I’ve been an engineering leader at Cambridge Design Partnership, one of the UK’s leading deep‑tech and product development consultancies. My work spans surgical robotics, medical devices, drug delivery, and advanced engineering—hands‑on technical development combined with strategic programme leadership.
-        <br>
-        Before CDP, I co‑founded a funded startup, raised investment, built the team, and ran the company. My experiences have taught me what it really takes to build from zero: the technical depth, the commercial instincts, and the operational resilience required to get something meaningful into the world.
- </p>
+    <section class="projects">
+        <div class="section-label" id="about">About</div>
+        <p class="section-desc">
+        CDP is a product development consultancy for startups and corporates. I've worked on about 20 client engagements, nearly all medical devices and surgical robots, and been programme lead on 4. The biggest was a 20-person optical medtech programme, where I sold and led the first 2 phases and a clinical study, about £1m. Alongside client work I've spent about 1.5 years FTE on sales, pricing, FP&amp;A and governance, including a trustee director seat on CDP's employee ownership trust.
+        <br><br>
+        Before CDP I co-founded Volunteer Space, B2B SaaS for volunteer coordination, and ran it as MD for 2 years. Raised a £250k seed round, built a team of 6 and a £1.5m pipeline, then closed it in Dec 2019 without product-market fit. I relied on the technical team for what we could build and when. That's normal in software, but I'm at my best close to the technology, and it's one reason I went back to engineering.
         </p>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-desc">A selection of innovations I’ve contributed to across robotics, medical devices, energy hardware, and drug delivery. These projects reflect the blend of engineering depth and founder experience that shapes how I approach early‑stage problem solving and product development.</p>
+        <h2 class="section-title" id="projects">Featured Projects</h2>
+        <p class="section-desc">CDP client work, my own ventures and a couple of university projects. Most CDP clients are confidential, so they stay unnamed apart from Titan Medical.</p>
 
         <div class="featured-grid">
 
@@ -122,16 +122,16 @@
             <!-- Medical Device -->
             <a href="project-medical-device.html" class="project-card">
                 <div class="card-image">
-                    <img src="assets/images/medical-device-hero.jpg" alt="Award-Winning Medical Device">
+                    <img src="assets/images/medical-device-hero.jpg" alt="Optical medtech programme">
                 </div>
                 <div class="card-body">
-                    <div class="card-tag">Programme Leadership</div>
-                    <h3 class="card-title">Award-Winning Medical Device</h3>
-                    <p class="card-desc">Led a £multi-million, 30-person multidisciplinary team developing a novel medical device from concept to validated alpha prototype. Validated with world-class surgeons. Won two company awards.</p>
+                    <div class="card-tag">CDP · Medtech · Programme lead</div>
+                    <h3 class="card-title">Optical medtech programme</h3>
+                    <p class="card-desc">Sold and led the first 2 phases of a 20-person programme, about £1m, taking a client's lab science to functional prototypes evaluated with surgeons. The client came back for 2 more phases, sold by colleagues, taking it past £2m.</p>
                     <div class="card-metrics">
-                        <div class="metric"><div class="metric-value">30</div><div class="metric-label">Team Members</div></div>
+                        <div class="metric"><div class="metric-value">20</div><div class="metric-label">People</div></div>
                         <div class="metric"><div class="metric-value">9.1/10</div><div class="metric-label">Client Rating</div></div>
-                        <div class="metric"><div class="metric-value">2</div><div class="metric-label">Awards</div></div>
+                        <div class="metric"><div class="metric-value">~£1m</div><div class="metric-label">Sold</div></div>
                     </div>
                 </div>
             </a>
@@ -142,12 +142,12 @@
                     <img src="assets/images/surgical-robot-hero.jpg" alt="Surgical Robotic System">
                 </div>
                 <div class="card-body">
-                    <div class="card-tag">Advanced Surgical Robotics</div>
-                    <h3 class="card-title">Surgical Robotic System</h3>
-                    <p class="card-desc">Three years building cutting-edge surgical robotics systems — from structural components and instrument drive mechanisms to UX and system-level design. Sub-mm precision across multiple clinical use cases.</p>
+                    <div class="card-tag">CDP · Surgical robotics · Design engineer to technical lead</div>
+                    <h3 class="card-title">Surgical robotics</h3>
+                    <p class="card-desc">6 robots for 6 clients since 2020, over 2 years FTE. Designed the set-up arm on Titan Medical's single-port robot and led concept-phase architecture work on others. Now technical lead on the systems architecture of a new robotics programme.</p>
                     <div class="card-metrics">
-                        <div class="metric"><div class="metric-value">3</div><div class="metric-label">Years Experience</div></div>
-                        <div class="metric"><div class="metric-value">Sub-mm</div><div class="metric-label">Precision</div></div>
+                        <div class="metric"><div class="metric-value">6</div><div class="metric-label">Robots for 6 clients</div></div>
+                        <div class="metric"><div class="metric-value">2+</div><div class="metric-label">Years FTE</div></div>
                     </div>
                 </div>
             </a>
@@ -158,9 +158,9 @@
                     <img src="assets/images/wind-turbine-hero.jpg" alt="Portable Wind Turbine">
                 </div>
                 <div class="card-body">
-                    <div class="card-tag">Hardware · Energy</div>
-                    <h3 class="card-title">Portable Wind Turbine</h3>
-                    <p class="card-desc">Designed and manufactured a working 500W portable wind turbine from scratch — composite manufacturing, CFD blade optimisation using BEMT and ANSYS, and prototype testing. Won £5k in innovation grants.</p>
+                    <div class="card-tag">University · Hardware · First venture</div>
+                    <h3 class="card-title">Aura: portable wind turbine</h3>
+                    <p class="card-desc">Designed, built and tested a 500W portable wind turbine at university, then wrote the business plan and won £5,000 across 2 innovation awards. My first go at building a business from hardware.</p>
                     <div class="card-metrics">
                         <div class="metric"><div class="metric-value">500W</div><div class="metric-label">Output</div></div>
                         <div class="metric"><div class="metric-value">&lt;5kg</div><div class="metric-label">Weight</div></div>
@@ -175,12 +175,12 @@
                     <img src="assets/images/volunteer-space-hero.png" alt="Volunteer Space">
                 </div>
                 <div class="card-body">
-                    <div class="card-tag">Venture · Founded & Funded</div>
+                    <div class="card-tag">Co-founder and MD · B2B SaaS · 2017 to 2019</div>
                     <h3 class="card-title">Volunteer Space Ltd</h3>
-                    <p class="card-desc">Co-founded, raised £250k, and built a six-person team from scratch. Ran the full founding operation — fundraising, investor relations, sales, and product. The hard lessons in commercial execution that only come from doing it for real.</p>
+                    <p class="card-desc">Co-founded it and ran it as MD for 2 years. Raised a £250k seed round, built a team of 6 and a £1.5m pipeline as the only commercial person, then closed it in Dec 2019 without product-market fit.</p>
                     <div class="card-metrics">
                         <div class="metric"><div class="metric-value">£250k</div><div class="metric-label">Raised</div></div>
-                        <div class="metric"><div class="metric-value">£1.5M</div><div class="metric-label">Pipeline</div></div>
+                        <div class="metric"><div class="metric-value">£1.5m</div><div class="metric-label">Pipeline</div></div>
                         <div class="metric"><div class="metric-value">91</div><div class="metric-label">Qualified Leads</div></div>
                     </div>
                 </div>
@@ -189,46 +189,45 @@
             <!-- Pricing Strategy -->
             <a href="project-pricing-strategy.html" class="project-card">
                 <div class="card-image">
-                    <img src="assets/images/pricing-strategy-card.jpg" alt="Company-Wide Pricing Strategy">
+                    <img src="assets/images/pricing-strategy-card.jpg" alt="Pricing model dashboard">
                 </div>
                 <div class="card-body">
-                    <div class="card-tag">Commercial Strategy · CDP</div>
-                    <h3 class="card-title">Company-Wide Pricing Strategy</h3>
-                    <p class="card-desc">Chosen to lead CDP's company-wide pricing strategy. Built live Power BI models integrating sales, finance, and operations data to identify profit drivers and inform strategic decisions at C-suite level.</p>
+                    <div class="card-tag">CDP · Commercial and governance</div>
+                    <h3 class="card-title">Commercial work at CDP</h3>
+                    <p class="card-desc">Sold about £1m of client work, led an internal pricing strategy project across every project hour since 2018, did a 7-month FP&amp;A secondment and sit on CDP's employee ownership trust as a trustee director.</p>
                     <div class="card-metrics">
-                        <div class="metric"><div class="metric-value">Multi-source</div><div class="metric-label">Live Data Model</div></div>
-                        <div class="metric"><div class="metric-value">C-Suite</div><div class="metric-label">Stakeholder Level</div></div>
-                        <div class="metric"><div class="metric-value">Power BI</div><div class="metric-label">Analytics Platform</div></div>
+                        <div class="metric"><div class="metric-value">~1.5 years</div><div class="metric-label">FTE on commercial work</div></div>
+                        <div class="metric"><div class="metric-value">7 months</div><div class="metric-label">FP&amp;A secondment</div></div>
                     </div>
                 </div>
             </a>
 
         </div>
 
-        <h3 style="font-size:1.85rem; font-weight:700; margin-bottom:2rem;">More Projects</h3>
+        <h3 style="font-size:1.85rem; font-weight:700; margin-bottom:2rem;">Earlier work</h3>
         <div class="smaller-grid">
             <a href="project-sorting-machine.html" class="small-card">
                 <div class="small-card-image"><img src="assets/images/FMCG-img.gif" alt="Sorting Machine"></div>
                 <div class="small-card-body">
-                    <div class="card-tag">Industrial Design</div>
+                    <div class="card-tag">Crown Packaging · FMCG · 2013 to 2014</div>
                     <h4 class="small-card-title">FMCG Sorting Machine</h4>
-                    <p class="small-card-desc">Feasibility study and design for automated quality inspection system. £300k annual savings, 6-month ROI.</p>
+                    <p class="small-card-desc">Feasibility study and machine design to automate layer pad inspection at Crown Packaging. Projected £300k a year in savings, 6-month ROI.</p>
                 </div>
             </a>
             <a href="project-rocket.html" class="small-card">
                 <div class="small-card-image"><img src="assets/images/rocketgif.gif" alt="Rocket Design"></div>
                 <div class="small-card-body">
-                    <div class="card-tag">Aerospace Engineering</div>
+                    <div class="card-tag">University · Aerospace</div>
                     <h4 class="small-card-title">Stratosphere Rocket</h4>
-                    <p class="small-card-desc">Aerodynamic design and CFD optimisation for L2525 hybrid rocket. Wind tunnel validation at Cambridge University across four experimental methods.</p>
+                    <p class="small-card-desc">University team project. Aerodynamic design and CFD optimisation for an L2525 hybrid rocket. Wind tunnel validation at Cambridge University across 4 experimental methods.</p>
                 </div>
             </a>
             <a href="project-harness.html" class="small-card">
                 <div class="small-card-image"><img src="assets/images/Harness-card.jpg" alt="Harness App"></div>
                 <div class="small-card-body">
-                    <div class="card-tag">Healthcare Tech</div>
-                    <h4 class="small-card-title">Patient Health App</h4>
-                    <p class="small-card-desc">Mobile health app for cancer patients. 22 clinical meetings with surgeons, psychologists, and healthcare professionals at one of the UK's largest cancer centres.</p>
+                    <div class="card-tag">Alacrity Foundation · Digital health</div>
+                    <h4 class="small-card-title">Harness: patient health app</h4>
+                    <p class="small-card-desc">Mobile health app for cancer patients, a venture concept at the Alacrity Foundation. Built the MVP, held 22 meetings with clinicians and psychologists at one of the UK's largest cancer centres and pitched it to about 200 people at Tech Dragons.</p>
                 </div>
             </a>
         </div>
@@ -237,46 +236,45 @@
 
     <section class="awards" id="awards">
         <div class="section-label">Recognition</div>
-        <h2 class="section-title">Awards & Honours</h2>
+        <h2 class="section-title">Awards</h2>
         <div class="awards-grid">
-            <div class="award-card"><h3 class="award-title">Most Phenomenal Object</h3><div class="award-year">2025</div><p class="award-desc">Internal company recognition for exceptional prototype delivery and innovation.</p></div>
-            <div class="award-card"><h3 class="award-title">Best Team Collaboration</h3><div class="award-year">2025</div><p class="award-desc">Led award-winning multidisciplinary team delivering complex medical device programme.</p></div>
-            <div class="award-card"><h3 class="award-title">Da Vinci Innovation Award</h3><p class="award-desc">£3,000 innovation grant for portable wind turbine design — recognised for engineering quality and commercial viability.</p></div>
-            <div class="award-card"><h3 class="award-title">Spark Innovation Award</h3><p class="award-desc">£2,000 innovation grant recognising product development quality and business plan.</p></div>
-            <div class="award-card"><h3 class="award-title">ME Design Challenge Winner</h3><p class="award-desc">1st place in competitive mechanical engineering design challenge.</p></div>
-            <div class="award-card"><h3 class="award-title">Ignite Runner Up</h3><p class="award-desc">Runner up in entrepreneurial business challenge recognising early-stage venture potential.</p></div>
+            <div class="award-card"><h3 class="award-title">Team Collaboration of the Year</h3><div class="award-year">2025</div><p class="award-desc">CDP internal award, won by the optical medtech programme team.</p></div>
+            <div class="award-card"><h3 class="award-title">Da Vinci Innovation Award</h3><p class="award-desc">£3,000 for the Aura wind turbine, Cardiff University.</p></div>
+            <div class="award-card"><h3 class="award-title">Spark Innovation Award</h3><p class="award-desc">£2,000 for the same turbine and its business plan, Cardiff University.</p></div>
+            <div class="award-card"><h3 class="award-title">Royal Academy of Engineering Leadership Award</h3><p class="award-desc">Awarded while at Cardiff University.</p></div>
+            <div class="award-card"><h3 class="award-title">Club of the Year, Cardiff University Students' Union</h3><p class="award-desc">As president of the Snowsports Society (550+ members), against every students' union club.</p></div>
         </div>
     </section>
 
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>Moving deliberately into deep tech founding.</h3>
-                <p> Surgical robotics. Medical devices. Hard engineering. If you're building something that matters — get in touch.</p>
+                <h3>Looking for a technical founder to build with.</h3>
+                <p>If you've got technology past proof of principle and want a co-founder to build the company around it, I'd like to hear from you.</p>
                 <p style="margin-top:1rem;"><a href="mailto:moore.ben.james@gmail.com" style="color:var(--ef-purple);">moore.ben.james@gmail.com</a></p>
                 <p><a href="https://linkedin.com/in/benjamesmoore" target="_blank" style="color:rgba(255,255,255,0.65); font-size:0.9rem;">LinkedIn →</a></p>
             </div>
             <div class="footer-section">
                 <h3>Featured Projects</h3>
                 <ul class="footer-links">
-                    <li><a href="project-medical-device.html">Medical Device</a></li>
+                    <li><a href="project-medical-device.html">Optical medtech</a></li>
                     <li><a href="project-surgical-robot.html">Surgical Robotics</a></li>
                     <li><a href="project-wind-turbine.html">Wind Turbine</a></li>
                     <li><a href="project-volunteer-space.html">Volunteer Space</a></li>
+                    <li><a href="project-pricing-strategy.html">Commercial work</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>More Projects</h3>
+                <h3>Earlier work</h3>
                 <ul class="footer-links">
                     <li><a href="project-sorting-machine.html">Sorting Machine</a></li>
                     <li><a href="project-rocket.html">Rocket Design</a></li>
                     <li><a href="project-harness.html">Harness App</a></li>
-                    <li><a href="project-pricing-strategy.html">Pricing Strategy</a></li>
                 </ul>
             </div>
         </div>
         <div style="max-width:1300px; margin:2rem auto 0; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.4); font-size:0.8rem;">
-            Last updated May 2026
+            Last updated Nov 2026
         </div>
     </footer>
 </body>
