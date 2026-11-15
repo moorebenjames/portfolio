@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Aura portable wind turbine - Ben Moore</title>
+<meta name="description" content="Aura: a portable wind turbine I designed, built and tried to turn into a business between 2011 and 2015. The product, the plan and what I'd do differently now.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' width='64' height='64' fill='%23B8281F' aria-hidden='true'%3E%3Ccircle cx='14.27' cy='53.13' r='3.45'/%3E%3Ccircle cx='8.11' cy='45.79' r='3.20'/%3E%3Ccircle cx='4.83' cy='36.79' r='3.01'/%3E%3Ccircle cx='4.83' cy='27.21' r='2.82'/%3E%3Ccircle cx='8.11' cy='18.21' r='2.65'/%3E%3Ccircle cx='14.27' cy='10.87' r='2.48'/%3E%3Ccircle cx='22.56' cy='6.08' r='2.32'/%3E%3Ccircle cx='32.00' cy='4.41' r='2.16'/%3E%3Ccircle cx='41.44' cy='6.08' r='2.01'/%3E%3Ccircle cx='49.73' cy='10.87' r='1.86'/%3E%3Ccircle cx='55.89' cy='18.21' r='1.71'/%3E%3Ccircle cx='59.17' cy='27.21' r='1.56'/%3E%3Ccircle cx='59.17' cy='36.79' r='1.42'/%3E%3Ccircle cx='55.89' cy='45.79' r='1.27'/%3E%3Ccircle cx='49.73' cy='53.13' r='1.13'/%3E%3Ccircle cx='41.44' cy='57.92' r='0.99'/%3E%3Ccircle cx='17.36' cy='41.87' r='2.76'/%3E%3Ccircle cx='14.41' cy='33.54' r='2.50'/%3E%3Ccircle cx='15.87' cy='24.82' r='2.30'/%3E%3Ccircle cx='21.37' cy='17.90' r='2.10'/%3E%3Ccircle cx='29.54' cy='14.52' r='1.92'/%3E%3Ccircle cx='38.33' cy='15.52' r='1.75'/%3E%3Ccircle cx='45.52' cy='20.65' r='1.58'/%3E%3Ccircle cx='49.33' cy='28.63' r='1.41'/%3E%3Ccircle cx='48.79' cy='37.46' r='1.25'/%3E%3Ccircle cx='44.04' cy='44.91' r='1.09'/%3E%3Ccircle cx='36.27' cy='49.13' r='0.94'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/aura/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Schibsted Grotesk";src:url("assets/aura/schibsted-grotesk-latin-wght-normal.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+:root{--snow:#F4F4F1;--fog:#E6E4DF;--ink:#1B1F22;--slate:#596267;--line:#D2D1CB;--red:#B8281F;--wrap:1180px;--pad:2.5rem}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--snow);color:var(--ink);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration-color:var(--red);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+img,video{display:block;max-width:100%}
+nav.site{position:fixed;top:0;left:0;width:100%;background:rgba(244,244,241,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:1000;padding:1.15rem 0}
+nav.site .in{max-width:1200px;margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:center}
+nav.site .logo{font-size:1.3rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.03em}
+nav.site .back{color:var(--ink);text-decoration:none;font-weight:600;font-size:.9rem}
+nav.site a:hover{color:var(--red)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-weight:500;letter-spacing:-.018em;line-height:1.08}
+h2{font-size:clamp(1.7rem,2.6vw,2.15rem)}
+h3{font-size:1.12rem;font-weight:600;letter-spacing:-.005em;line-height:1.3}
+p{max-width:62ch}
+.meta{font-size:.88rem;color:var(--slate)}
+/* hero */
+.hero{padding:5.6rem 0 0}
+.film{margin:0 auto;max-width:calc(var(--wrap) + 6rem);padding:0 var(--pad)}
+.film .frame{position:relative;border-radius:6px;overflow:hidden;background:#DAD7D0;height:min(calc((100vw - 2*var(--pad))*.5625),calc(100svh - 20.5rem),718px);min-height:230px}
+.film video{width:100%;height:100%;object-fit:cover;object-position:50% 46%}
+.film .frame::after{content:"";position:absolute;inset:0;background:url(assets/aura/grain.png);pointer-events:none}
+.film button{position:absolute;z-index:2;right:.9rem;bottom:.9rem;font:inherit;font-size:.8rem;font-weight:500;color:var(--ink);background:rgba(244,244,241,.82);border:1px solid rgba(27,31,34,.14);border-radius:999px;padding:.32rem .8rem;cursor:pointer}
+.film button:hover{background:var(--snow)}
+.hero-text{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3.5rem;align-items:end;margin-top:2.4rem}
+.brand{position:absolute;left:1.5rem;top:1.4rem;z-index:2;display:flex;align-items:center;gap:.7rem}
+.brand .mark{width:46px;height:46px;flex:none}
+.brand .word{font-size:1.75rem;font-weight:600;letter-spacing:-.02em;line-height:1}
+.brand .word small{display:block;font-size:.72rem;font-weight:400;letter-spacing:.01em;color:var(--slate);margin-top:.28rem}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.5rem);margin:.8rem 0 0;text-wrap:balance}
+.hero .lede{font-size:clamp(1.02rem,1.25vw,1.14rem);line-height:1.58;max-width:46ch;padding-bottom:.35rem}
+figcaption,.cap{font-size:.86rem;color:var(--slate);margin-top:.8rem;max-width:70ch;line-height:1.5}
+/* facts */
+.facts{margin-top:4.2rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts dl{display:grid;grid-template-columns:repeat(5,1fr)}
+.facts div{padding:1.7rem 1.4rem 1.6rem 0;border-right:1px solid var(--line)}
+.facts div+div{padding-left:1.4rem}
+.facts div:last-child{border-right:0}
+.facts dt{font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:400;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.facts dt span{font-size:.5em;letter-spacing:0;margin-left:.08em}
+.facts dd{font-size:.86rem;color:var(--slate);margin-top:.65rem;line-height:1.45}
+.facts dd b{font-weight:600;color:var(--ink)}
+.facts .model dt{color:var(--red)}
+/* two column sections */
+.sec{padding:6.5rem 0 0}
+.cols{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:2.5rem}
+.cols p+p{margin-top:1.05rem}
+/* unfold */
+.next{margin-top:6.5rem;background:linear-gradient(#E9E7E2,#E3E0DA)}
+.next .intro{padding:5.5rem 0 3.5rem}
+.unfold{position:relative;height:640vh;background:linear-gradient(#E3E0DA,#D2CEC7)}
+.unfold-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.unfold canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:grab;opacity:0;transition:opacity .6s}
+.unfold.is-ready canvas{opacity:1}
+.unfold.is-dragging canvas{cursor:grabbing}
+.unfold-hint{position:absolute;left:0;right:0;top:5.6rem;font-size:.84rem;color:var(--slate)}
+.unfold-steps{list-style:none;position:absolute;left:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)));bottom:11vh;width:min(22rem,calc(100vw - 2*var(--pad)));height:9.5rem;pointer-events:none}
+.unfold-steps li{position:absolute;left:0;bottom:0;width:100%;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s}
+.unfold-steps li.is-active{opacity:1;transform:none}
+.unfold-steps .n{font-size:.84rem;color:var(--red);font-weight:600;font-variant-numeric:tabular-nums}
+.unfold-steps h3{font-size:1.75rem;font-weight:500;letter-spacing:-.02em;margin:.2rem 0 .55rem}
+.unfold-steps p{font-size:.98rem;line-height:1.5}
+.unfold-progress{position:absolute;right:max(1.2rem,calc((100vw - var(--wrap))/2 + .6rem));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.15rem}
+.unfold-progress button{width:28px;height:28px;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.unfold-progress button::before{content:"";width:7px;height:7px;border-radius:50%;background:rgba(27,31,34,.26);transition:transform .3s,background .3s}
+.unfold-progress button.is-active::before{background:var(--red);transform:scale(1.5)}
+.unfold-labels{position:absolute;inset:0;pointer-events:none;visibility:hidden}
+.unfold-label{position:absolute;left:0;top:0;font-size:.8rem;line-height:1.25;white-space:nowrap}
+.unfold-label i{position:absolute;left:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 3px rgba(244,244,241,.7)}
+.unfold-label span{position:absolute;left:14px;top:-.62em;padding-left:22px;font-weight:500}
+.unfold-label span::before{content:"";position:absolute;left:0;top:.62em;width:16px;border-top:1px solid var(--ink)}
+.unfold-label small{display:block;font-size:.72rem;font-weight:400;color:var(--slate)}
+.unfold-label.new i{background:var(--red)} .unfold-label.new small{color:var(--red)}
+.unfold-label.flip span{left:auto;right:14px;padding-left:0;padding-right:22px;text-align:right}
+.unfold-label.flip span::before{left:auto;right:0}
+.unfold-fallback{display:none}
+.unfold.no-3d{height:auto;padding:3rem 0 4rem}
+.unfold.no-3d .unfold-stage{position:static;height:auto}
+.unfold.no-3d canvas,.unfold.no-3d .unfold-progress,.unfold.no-3d .unfold-hint,.unfold.no-3d .unfold-labels{display:none}
+.unfold.no-3d .unfold-fallback{display:block;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.unfold.no-3d .unfold-steps{position:static;width:auto;height:auto;max-width:var(--wrap);margin:2rem auto 0;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;pointer-events:auto}
+.unfold.no-3d .unfold-steps li{position:static;opacity:1;transform:none}
+/* prototype */
+.shots{display:grid;grid-template-columns:repeat(12,1fr);gap:1.1rem;margin-top:3rem}
+.shots figure{grid-column:span 6}
+.shots figure.wide{grid-column:1/-1}
+.shots img,.shots video{display:block;width:100%;height:auto;border-radius:6px;background:var(--fog);object-fit:cover}
+.shots .wide img{aspect-ratio:21/9}
+.shots .half img,.shots .half video{aspect-ratio:16/10}
+.weights{margin-top:2.2rem;font-size:.9rem;color:var(--slate);max-width:none}
+.weights b{color:var(--ink);font-weight:600}
+/* plan */
+.phases{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem;border-top:1px solid var(--ink)}
+.phases li{padding:1.5rem 1.6rem 0 0}
+.phases li+li{padding-left:1.6rem;border-left:1px solid var(--line)}
+.phases .t{font-size:2.3rem;font-weight:400;letter-spacing:-.03em;line-height:1}
+.phases h3{margin:.9rem 0 .4rem}
+.phases p{font-size:.96rem}
+.note{margin-top:2.4rem}
+/* retro */
+.retro{margin-top:6.5rem;padding:5.5rem 0 6rem;background:var(--ink);color:#EDEBE6}
+.retro h2{color:#fff}
+.retro .meta,.retro .dim{color:#A9AFB2}
+.retro a{text-decoration-color:#E0655C}
+.retro a:hover{color:#F08A82}
+.retro .grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem;margin-top:3rem}
+.retro h3{color:#fff;margin-bottom:.7rem}
+.retro .blk+.blk{margin-top:2.6rem}
+.retro p+p{margin-top:.95rem}
+.lessons{list-style:none;border-top:1px solid rgba(255,255,255,.22)}
+.lessons li{padding:1.05rem 0;border-bottom:1px solid rgba(255,255,255,.22);max-width:62ch}
+.lessons strong{font-weight:600;color:#fff}
+sup{font-size:.68em;line-height:0}
+sup a{text-decoration:none;color:#F08A82}
+/* colophon */
+.colophon{padding:4rem 0 1rem;font-size:.88rem;color:var(--slate)}
+.colophon p+p{margin-top:.7rem}
+.colophon ol{margin:.7rem 0 0 1.2rem}
+.colophon li{margin-top:.25rem}
+footer.site{background:#0a0a0a;color:#fff;padding:3rem var(--pad);margin-top:4rem}
+footer.site .in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+footer.site p{color:rgba(255,255,255,.5);font-size:.85rem}
+footer.site a{color:#F08A82;text-decoration:none;font-size:.9rem}
+@media (max-width:900px){
+ :root{--pad:1.35rem}
+ .hero{padding-top:5rem}
+ .hero-text{grid-template-columns:1fr;gap:1.4rem;margin-top:2.2rem}
+ .film .frame{height:auto;aspect-ratio:16/9;min-height:0}
+ .brand{left:.9rem;top:.8rem;gap:.5rem}
+ .brand .mark{width:32px;height:32px}
+ .brand .word{font-size:1.25rem}
+ .brand .word small{font-size:.6rem;margin-top:.2rem}
+ .facts dl{grid-template-columns:repeat(2,1fr)}
+ .facts div{border-right:0;border-bottom:1px solid var(--line);padding:1.3rem 1rem 1.2rem 0}
+ .facts div+div{padding-left:0}
+ .facts div:nth-child(odd){border-right:1px solid var(--line)}
+ .facts div:nth-child(even){padding-left:1.2rem}
+ .facts div:last-child{grid-column:1/-1;border-bottom:0;border-right:0}
+ .cols,.retro .grid{grid-template-columns:1fr;gap:1.4rem}
+ .retro .grid{gap:3rem}
+ .sec{padding-top:4.5rem}
+ .next,.retro{margin-top:4.5rem}
+ .shots figure{grid-column:1/-1}
+ .shots .wide img{aspect-ratio:16/9}
+ .phases{grid-template-columns:1fr}
+ .phases li,.phases li+li{padding:1.3rem 0;border-left:0;border-bottom:1px solid var(--line)}
+ .unfold-steps{bottom:7vh;height:10.5rem;z-index:2}
+ .unfold-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36vh;background:linear-gradient(to top,rgba(211,207,200,.97) 52%,rgba(211,207,200,0));pointer-events:none;z-index:1}
+ .unfold.no-3d .unfold-stage::after{display:none}
+ .unfold-steps h3{font-size:1.45rem}
+ .unfold-progress{right:.3rem}
+ .unfold-label{font-size:.7rem}
+ .unfold-label small{display:none}
+ .unfold.no-3d .unfold-steps{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.unfold-steps li,.unfold canvas{transition:none}}
+</style>
+</head>
+<body>
+<nav class="site"><div class="in"><a href="index.html" class="logo">Ben Moore</a><a href="index.html" class="back">← All Projects</a></div></nav>
+
+<header class="hero">
+  <figure class="film">
+    <div class="frame">
+      <div class="brand"><svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92" width="92" height="92" fill="#B8281F" aria-hidden="true"><circle cx="20.51" cy="76.38" r="4.96"/><circle cx="11.66" cy="65.83" r="4.60"/><circle cx="6.95" cy="52.89" r="4.32"/><circle cx="6.95" cy="39.11" r="4.06"/><circle cx="11.66" cy="26.17" r="3.81"/><circle cx="20.51" cy="15.62" r="3.57"/><circle cx="32.44" cy="8.74" r="3.34"/><circle cx="46.00" cy="6.34" r="3.11"/><circle cx="59.56" cy="8.74" r="2.89"/><circle cx="71.49" cy="15.62" r="2.67"/><circle cx="80.34" cy="26.17" r="2.46"/><circle cx="85.05" cy="39.11" r="2.25"/><circle cx="85.05" cy="52.89" r="2.04"/><circle cx="80.34" cy="65.83" r="1.83"/><circle cx="71.49" cy="76.38" r="1.63"/><circle cx="59.56" cy="83.26" r="1.43"/><circle cx="24.96" cy="60.19" r="3.97"/><circle cx="20.72" cy="48.21" r="3.60"/><circle cx="22.81" cy="35.68" r="3.30"/><circle cx="30.73" cy="25.73" r="3.02"/><circle cx="42.47" cy="20.87" r="2.76"/><circle cx="55.10" cy="22.31" r="2.51"/><circle cx="65.44" cy="29.69" r="2.27"/><circle cx="70.91" cy="41.16" r="2.03"/><circle cx="70.14" cy="53.84" r="1.80"/><circle cx="63.31" cy="64.56" r="1.57"/><circle cx="52.14" cy="70.63" r="1.35"/></svg><div class="word">aura<small>power systems</small></div></div>
+      <video id="film" muted loop playsinline preload="metadata" poster="assets/aura/film-poster.jpg" aria-label="Animation of the turbine unfolding from a packed bundle, rising on its mast and spinning up">
+        <source src="assets/aura/film.mp4" type="video/mp4">
+      </video>
+      <button type="button" id="film-toggle" aria-controls="film">Pause</button>
+    </div>
+    <figcaption>The next version, unfolding. The mechanism is my 2015 CAD. The white covers, the tail and this film were made in 2026. It was never built.</figcaption>
+  </figure>
+  <div class="wrap hero-text">
+    <div>
+      <p class="meta">(University venture - Hardware - Designer and founder - 2011 to 2015)</p>
+      <h1>A wind turbine that folds into a bag</h1>
+    </div>
+    <p class="lede">My first hardware venture. Portable wind power for expeditions and camping, for the hours solar can't cover. I built the first prototype in 2011, took it through Cardiff University and won £5,000 in innovation awards. Then I stopped. This page is the product, the plan and what I'd do differently now.</p>
+  </div>
+  <div class="wrap">
+    <div class="facts"><dl>
+      <div><dt>3.7<span>kg</span></dt><dd><b>Prototype 1</b>, weighed</dd></div>
+      <div><dt>3<span>m</span></dt><dd><b>Prototype 1</b>, height when up</dd></div>
+      <div><dt>15<span>min</span></dt><dd><b>Prototype 1</b>, 1 person to put it up</dd></div>
+      <div><dt>£5,000</dt><dd>Da Vinci (£3,000) and Spark (£2,000) innovation awards</dd></div>
+      <div class="model"><dt>500<span>W</span></dt><dd><b>Next version</b> at 13 m/s. Modelled, never built</dd></div>
+    </dl></div>
+  </div>
+</header>
+
+<section class="sec" id="bet">
+  <div class="wrap cols">
+    <h2>The bet</h2>
+    <div>
+      <p>Off-grid, people still need to charge small things: phones, GPS, radios, cameras. Portable solar does that well in daylight. My bet was that wind could cover the rest - nights, bad weather and high latitudes.</p>
+      <p>2 markets, in order. First the people who'd pay for something tough: expedition, research and aid teams working where there's no grid. Then campers, with a cheaper version at about £150.</p>
+      <p>What I had to go on in 2014: a survey of 60 campers, where 54% said they struggle to find power and would use a portable source. 2 replies from charities, both polite. And 2 competitors, 1 of them still on Kickstarter.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="prototype">
+  <div class="wrap">
+    <div class="cols">
+      <h2>Prototype 1 was real</h2>
+      <div>
+        <p>Built in 2011 as my A-level project, after reading that the US Army wanted a wind turbine 1 soldier could carry. Glass fibre blades, a steel hub, a bought-in gearbox and motor, poles, guy ropes and a heart-shaped tail. It went up in about 15 minutes and it generated.</p>
+        <p>My write-up ended with a list of fixes: lighter poles that telescope, a more compact fold and better looks. That list became the next version.</p>
+      </div>
+    </div>
+    <div class="shots">
+      <figure class="wide"><img src="assets/aura/proto-flying.jpg" alt="The first prototype turbine with red blades spinning on a thin guyed mast against a bright sky" loading="lazy" width="2000" height="972"><figcaption>Prototype 1, up and turning.</figcaption></figure>
+      <figure class="half"><img src="assets/aura/proto-kit.jpg" alt="All the parts of the first prototype laid out on grass: red blades, heart-shaped tail, poles, gearbox and guy ropes" loading="lazy" width="1600" height="1200"><figcaption>The whole kit. Where the 3.7kg goes: poles 1.7, tripod 1.1, gearbox 0.3, tail 0.3, blades 0.2, hub 0.2 (each rounded).</figcaption></figure>
+      <figure class="half"><video controls muted playsinline preload="none" poster="assets/aura/archive-poster.jpg" aria-label="2011 footage of the first prototype being assembled and spinning"><source src="assets/aura/archive-2011.mp4" type="video/mp4"></video><figcaption>2011, Wroughton. Putting prototype 1 up in a 5 to 10mph wind. Old camera.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="next" id="next">
+  <div class="wrap intro cols">
+    <h2>The next version</h2>
+    <div>
+      <p>In 2015 I redesigned it. New blades from Blade Element Momentum theory, checked in CFD for my dissertation. A rotor that folds, a head that tilts and a telescopic mast, so it packs as 1 piece. The model said 500W in a 13 m/s wind.</p>
+      <p>I never got round to the covers. In 2026 I handed the old CAD to an AI agent and asked it to finish the job: design the casework, animate the fold and build this page. Scroll to put it up.</p>
+    </div>
+  </div>
+  <section class="unfold" data-aura3d data-src="assets/aura/aura.glb" aria-label="Interactive model: the turbine unfolding in 6 steps">
+    <div class="unfold-stage">
+      <canvas></canvas>
+      <img class="unfold-fallback" src="assets/aura/unfold-fallback.jpg" alt="The next version of the turbine, deployed" loading="lazy">
+      <div class="unfold-labels" aria-hidden="true"></div>
+      <div class="unfold-hint"><div class="wrap">Scroll to unfold. Drag to look around.</div></div>
+      <ol class="unfold-steps">
+        <li class="is-active"><span class="n">1 of 6</span><h3>Packed</h3><p>Everything folds around the mast: blades back along the body, head tipped upright, tripod closed. Under 1m long in this model.</p></li>
+        <li><span class="n">2 of 6</span><h3>Tripod</h3><p>3 legs swing out on a sliding collar and telescope, like a camera tripod.</p></li>
+        <li><span class="n">3 of 6</span><h3>Rotor</h3><p>The blades hinge out before the mast goes up, while you can still reach them. 1.2m across.</p></li>
+        <li><span class="n">4 of 6</span><h3>Head</h3><p>The head tips forward on 1 pivot and locks. The rotor now faces the wind.</p></li>
+        <li><span class="n">5 of 6</span><h3>Mast</h3><p>6 telescoping tubes lift the hub to about 3m. Guy lines not shown.</p></li>
+        <li><span class="n">6 of 6</span><h3>Inside</h3><p>Covers off. Black labels are my 2015 CAD. Red labels are the 2026 concept.</p></li>
+      </ol>
+      <div class="unfold-progress" role="group" aria-label="Unfold steps">
+        <button type="button" aria-label="Packed"></button><button type="button" aria-label="Tripod"></button><button type="button" aria-label="Rotor"></button><button type="button" aria-label="Head"></button><button type="button" aria-label="Mast"></button><button type="button" aria-label="Inside"></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="sec" id="plan">
+  <div class="wrap">
+    <div class="cols">
+      <h2>The plan</h2>
+      <div><p>I wrote the business plan with a module team at Cardiff in 2014. 3 turbines in 3 phases, with profit from T2 meant to pay for T3.</p></div>
+    </div>
+    <ol class="phases">
+      <li><div class="t">T1</div><h3>Prove it</h3><p>Prototype built and tested. Won the Da Vinci award, £3,000, to build the next one.</p></li>
+      <li><div class="t">T2</div><h3>Make it tough</h3><p>For expedition and aid teams. Telescopic guyed mast, parts you can repair in the field, small batches.</p></li>
+      <li><div class="t">T3</div><h3>Make it cheap</h3><p>For campers at about £150, through outdoor shops and online.</p></li>
+    </ol>
+    <p class="note">It needed £180,000 of outside money before it paid for itself: a £50,000 seed fund, a £50,000 bank loan and £80,000 from a regional fund. First revenue was meant to be bulk orders from charities. We had 2 replies and no orders.</p>
+  </div>
+</section>
+
+<section class="retro" id="retro">
+  <div class="wrap">
+    <h2>Looking back from 2026</h2>
+    <div class="grid">
+      <div>
+        <div class="blk"><h3>Why it stopped</h3>
+          <p>It was only a team for the module. Once the business plan was handed in, nobody else wanted to carry on. I kept building for a while, then got a place at the Alacrity Foundation. That was full time, so I dropped it.</p>
+          <p>It was more of a passion project than something I thought had real legs.</p></div>
+        <div class="blk"><h3>What the next 10 years said</h3>
+          <p>Solar and batteries won. A 100W folding solar panel starts at about £100 in the UK now.<sup><a href="#s1">1</a></sup> Portable wind turned out to be a real niche and a small one: the best-known one on sale, Shine, is 40W, about 1.4kg and around $400.<sup><a href="#s2">2</a></sup></p>
+          <p>The problem got smaller too. Our plan opened with 1.5 billion people without electricity. The IEA's count for 2024 is 730 million.<sup><a href="#s3">3</a></sup></p>
+          <p>And the physics didn't move. Power goes with the cube of wind speed, so the 500W headline needs 13 m/s, which is Force 6. My own CFD curve gives 13W at 4 m/s and 26W at 5 m/s.</p></div>
+        <div class="blk"><h3>What it gave me</h3>
+          <p>My first go at building a business from hardware, and the first time I went out to raise money. It showed me I was missing the commercial side, so I went to the Alacrity Foundation and co-founded Volunteer Space to learn it.</p></div>
+      </div>
+      <div>
+        <h3>What I'd do differently</h3>
+        <ul class="lessons">
+          <li><strong>Sell before building.</strong> The research asked people whether they liked the idea - a hiker in 2011, 60 campers in 2014. It never asked anyone to pay. Now I'd want 20 conversations with expedition leaders and 1 paid pilot before cutting metal.</li>
+          <li><strong>Use the buyer's number.</strong> Watt-hours a day for each kg carried, in the wind they'll get, against a folding solar panel. Peak watts flatter the product.</li>
+          <li><strong>Pick 1 beachhead.</strong> The plan chased charities, campers and a US military tender at once. Wind beats solar where it's dark and windy: polar and winter expeditions, high-latitude field stations. I'd start there.</li>
+          <li><strong>Write kill criteria on day 1.</strong> This faded out when something better came along. I'd rather have stopped on a number I set in advance.</li>
+          <li><strong>Find the co-founder first.</strong> I was the only one who wanted it. A commercial co-founder would have asked the questions above in week 1.</li>
+          <li><strong>Spend the saved time with customers.</strong> The covers, film and 3D model on this page took an AI agent about a day from my old CAD. In 2015 I never got round to them.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="colophon">
+  <div class="wrap">
+    <p><strong>What's real:</strong> prototype 1, its photos and footage, the mechanism CAD from 2015, the awards and the 2014 plan. <strong>What's concept:</strong> the white covers, hub fairing, tail, redrawn logo and the film, made in November 2026 with Claude from my original files. The 500W figure comes from my dissertation model and was never tested.</p>
+    <ol>
+      <li id="s1"><a href="https://solarlove.org/?p=16328">Folding solar panel prices by size, UK 2026</a>, Solar Love.</li>
+      <li id="s2"><a href="https://gearjunkie.com/?p=669204">Shine portable wind turbine</a>, GearJunkie.</li>
+      <li id="s3"><a href="https://www.iea.org/commentaries/access-to-electricity-stagnates-leaving-globally-730-million-in-the-dark">Access to electricity stagnates, leaving globally 730 million in the dark</a>, IEA, 2025.</li>
+    </ol>
+  </div>
+</section>
+
+<footer class="site"><div class="in"><p>© Ben Moore</p><a href="index.html">← Back to all projects</a><a href="mailto:moore.ben.james@gmail.com">moore.ben.james@gmail.com</a></div></footer>
+
+<script>
+(function(){
+  var v=document.getElementById('film'),b=document.getElementById('film-toggle');
+  if(!v||!b)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function label(){b.textContent=v.paused?'Play':'Pause';}
+  b.addEventListener('click',function(){if(v.paused){v.play();}else{v.pause();}});
+  v.addEventListener('play',label);v.addEventListener('pause',label);
+  if(!reduce){var p=v.play();if(p&&p.catch)p.catch(function(){label();});}
+  label();
+  if('IntersectionObserver' in window&&!reduce){
+    var user=false;b.addEventListener('click',function(){user=v.paused;});
+    new IntersectionObserver(function(e){if(e[0].isIntersecting){if(!user)v.play().catch(function(){});}else{v.pause();}},{threshold:0.15}).observe(v);
+  }
+})();
+</script>
+<script type="module" src="assets/aura/aura3d.js"></script>
+</body>
+</html>
