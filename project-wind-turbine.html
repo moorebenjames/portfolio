@@ -50,6 +50,58 @@
         .footer-inner p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
         .footer-inner a { color: var(--ef-purple); text-decoration: none; font-size: 0.9rem; }
         @media (max-width: 900px) { .hero h1 { font-size: 2.5rem; } .hero-metrics { gap: 2rem; } .two-col { grid-template-columns: 1fr; gap: 1.5rem; } .content-section { padding: 3rem 1.5rem; } .hero { padding: 6rem 1.5rem 3rem; } }</style>
+<style id="aura-unfold-css">
+@font-face{font-family:"Schibsted Grotesk";src:url("assets/aura/schibsted-grotesk-latin-wght-normal.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+.aura-unfold{--ink:#1B1F22;--slate:#596267;--red:#B8281F;--wrap:1200px;--pad:2.5rem;font-family:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);font-size:1.0625rem;line-height:1.6;margin:2.5rem 0}
+.aura-unfold *{margin:0;padding:0;box-sizing:border-box}
+.aura-unfold h3{font-weight:500;color:var(--ink)}
+.aura-unfold .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.aura-unfold :focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.unfold{position:relative;height:640vh;background:linear-gradient(#E3E0DA,#D2CEC7)}
+.unfold-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.unfold canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:grab;opacity:0;transition:opacity .6s}
+.unfold.is-ready canvas{opacity:1}
+.unfold.is-dragging canvas{cursor:grabbing}
+.unfold-hint{position:absolute;left:0;right:0;top:8.4rem;font-size:.84rem;color:var(--slate)}
+.unfold-steps{list-style:none;position:absolute;left:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)));bottom:11vh;width:min(22rem,calc(100vw - 2*var(--pad)));height:9.5rem;pointer-events:none}
+.unfold-steps li{position:absolute;left:0;bottom:0;width:100%;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s}
+.unfold-steps li.is-active{opacity:1;transform:none}
+.unfold-steps .n{font-size:.84rem;color:var(--red);font-weight:600;font-variant-numeric:tabular-nums}
+.unfold-steps h3{font-size:1.75rem;font-weight:500;letter-spacing:-.02em;margin:.2rem 0 .55rem}
+.unfold-steps p{font-size:.98rem;line-height:1.5}
+.unfold-progress{position:absolute;right:max(1.2rem,calc((100vw - var(--wrap))/2 + .6rem));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.15rem}
+.unfold-progress button{width:28px;height:28px;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.unfold-progress button::before{content:"";width:7px;height:7px;border-radius:50%;background:rgba(27,31,34,.26);transition:transform .3s,background .3s}
+.unfold-progress button.is-active::before{background:var(--red);transform:scale(1.5)}
+.unfold-labels{position:absolute;inset:0;pointer-events:none;visibility:hidden}
+.unfold-label{position:absolute;left:0;top:0;font-size:.8rem;line-height:1.25;white-space:nowrap}
+.unfold-label i{position:absolute;left:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 3px rgba(244,244,241,.7)}
+.unfold-label span{position:absolute;left:14px;top:-.62em;padding-left:22px;font-weight:500}
+.unfold-label span::before{content:"";position:absolute;left:0;top:.62em;width:16px;border-top:1px solid var(--ink)}
+.unfold-label small{display:block;font-size:.72rem;font-weight:400;color:var(--slate)}
+.unfold-label.new i{background:var(--red)} .unfold-label.new small{color:var(--red)}
+.unfold-label.flip span{left:auto;right:14px;padding-left:0;padding-right:22px;text-align:right}
+.unfold-label.flip span::before{left:auto;right:0}
+.unfold-fallback{display:none}
+.unfold.no-3d{height:auto;padding:3rem 0 4rem}
+.unfold.no-3d .unfold-stage{position:static;height:auto}
+.unfold.no-3d canvas,.unfold.no-3d .unfold-progress,.unfold.no-3d .unfold-hint,.unfold.no-3d .unfold-labels{display:none}
+.unfold.no-3d .unfold-fallback{display:block;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.unfold.no-3d .unfold-steps{position:static;width:auto;height:auto;max-width:var(--wrap);margin:2rem auto 0;padding:0 var(--pad);display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;pointer-events:auto}
+.unfold.no-3d .unfold-steps li{position:static;opacity:1;transform:none}
+@media (max-width:900px){
+.aura-unfold{--pad:1.5rem}
+.unfold-steps{bottom:7vh;height:10.5rem;z-index:2}
+.unfold-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36vh;background:linear-gradient(to top,rgba(211,207,200,.97) 52%,rgba(211,207,200,0));pointer-events:none;z-index:1}
+.unfold.no-3d .unfold-stage::after{display:none}
+.unfold-steps h3{font-size:1.45rem}
+.unfold-progress{right:.3rem}
+.unfold-label{font-size:.7rem}
+.unfold-label small{display:none}
+.unfold.no-3d .unfold-steps{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.unfold-steps li,.unfold canvas{transition:none}}
+</style>
 </head>
 <body>
 <nav><div class="nav-container"><a href="index.html" class="logo">Ben Moore</a><a href="index.html" class="back-link">← All Projects</a></div></nav>
@@ -73,6 +125,27 @@
   <div class="callout"><h3>The product</h3><p>Portable power for expeditions, camping and off-grid use. Carried and put up by one person, generating up to 500W in 13 m/s wind.</p></div>
 </section>
 <div class="img-block"><img src="assets/images/wind-turbine-prototype.jpg" alt="Wind Turbine Prototype"></div>
+<div class="aura-unfold">
+<section class="unfold" data-aura3d data-src="assets/aura/aura.glb" aria-label="Interactive model: the turbine unfolding in 6 steps">
+    <div class="unfold-stage">
+      <canvas></canvas>
+      <img class="unfold-fallback" src="assets/aura/unfold-fallback.jpg" alt="The next version with the rotor open, before the mast goes up" loading="lazy">
+      <div class="unfold-labels" aria-hidden="true"></div>
+      <div class="unfold-hint"><div class="wrap">Scroll to unfold. Drag to look around.</div></div>
+      <ol class="unfold-steps">
+        <li class="is-active"><span class="n">1 of 6</span><h3>Packed</h3><p>Everything folds around the mast: blades back along the body, head tipped upright, tripod closed. Under 1m long in this model.</p></li>
+        <li><span class="n">2 of 6</span><h3>Tripod</h3><p>3 legs swing out on a sliding collar and telescope, like a camera tripod.</p></li>
+        <li><span class="n">3 of 6</span><h3>Rotor</h3><p>The blades hinge out before the mast goes up, while you can still reach them. 1.2m across.</p></li>
+        <li><span class="n">4 of 6</span><h3>Head</h3><p>The head tips forward on 1 pivot and locks. The rotor now faces the wind.</p></li>
+        <li><span class="n">5 of 6</span><h3>Mast</h3><p>6 telescoping tubes lift the hub to about 3m. Guy lines not shown.</p></li>
+        <li><span class="n">6 of 6</span><h3>Inside</h3><p>Covers off. Black labels are my 2015 CAD. Red labels are the 2026 concept.</p></li>
+      </ol>
+      <div class="unfold-progress" role="group" aria-label="Unfold steps">
+        <button type="button" aria-label="Packed"></button><button type="button" aria-label="Tripod"></button><button type="button" aria-label="Rotor"></button><button type="button" aria-label="Head"></button><button type="button" aria-label="Mast"></button><button type="button" aria-label="Inside"></button>
+      </div>
+    </div>
+  </section>
+</div>
 <section class="content-section" id="development">
   <h2>Scope</h2>
   <h3>Design and engineering</h3>
@@ -104,4 +177,5 @@
   </ul>
 </section>
 <footer><div class="footer-inner"><p>© Ben Moore</p><a href="index.html">← Back to all projects</a><a href="mailto:moore.ben.james@gmail.com">moore.ben.james@gmail.com</a></div></footer>
+<script type="module" src="assets/aura/aura3d.js"></script>
 </body></html>
